@@ -48,27 +48,30 @@ def gra():
             break
     return g, j
 
+def bankructwo(g_coins = 25, j_coins = 5, bank_g = 0, bank_j = 0):
+    while g_coins >= 0 and j_coins >= 0:
+        g_coins -= 1
+        j_coins -= 1
+        wynik = gra()
+        if wynik[0] > 0:
+            g_coins += 2
+        if wynik[1] > 0:
+            j_coins += 2
+        if g_coins == 0:
+            bank_g += 1
+            return (1,0)
+        if j_coins == 0:
+            bank_j += 1
+            return (0,1)
 
 def zad2():
-    bank_g = 0
-    bank_j = 0
-    g_coins = 25
-    j_coins = 5
-    n = 100000
-    for _ in range(n):
-        while g_coins>0 and j_coins>0:
-            g_coins -= 1
-            j_coins -= 1
-            wynik = gra()
-            if wynik[0] >0:
-                g_coins += 2
-            if wynik[1] >0:
-                j_coins += 2
-            if g_coins == 0:
-                bank_g +=1
-            if j_coins == 0:
-                bank_j +=1   
-    return bank_g/n
+    n = 1000
+    g, j = (0,0)
+    for i in range(n):
+        w = bankructwo()
+        g += w[0]
+        j += w[1]
+    return g/(g+j)
 
 pr2 = zad2()
 print('prawd = ',pr2)
