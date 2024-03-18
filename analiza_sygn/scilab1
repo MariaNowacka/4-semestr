@@ -1,0 +1,47 @@
+function z = iloczyn(a,b)
+    z = a*b
+endfunction
+
+function pierwiastki(a,b)
+    tab = list(n)
+    mod = 1
+    arg = %pi
+    for i = 1:n:
+      x = nthroot(mod,1)*(cos((arg + i*2*%pi)/n)) + %i*sin((arg + i*2*%pi)/n)
+      disp(x)
+      plot(real(x),imag(x), '-')  // 'o', '-'
+      isoview on
+    end
+endfunction
+
+function ys = x1(x)
+    ys = x.*sin(x) // ys = x.'*sin(x)
+endfunction
+
+function plots()
+    x = -30:0.1:30 //x = linspace(-5, 5, 1000);
+    x = x.' +0
+    x2 = x.'-3
+    ys2 = (x.' -3)*sin(x.' -3)
+    plot(x, x1(x))
+    plot(x2, x1(x2))
+endfunction
+
+function cool(p,k)
+    x = -10:0.01:10 
+
+    // Oblicz wartości funkcji sin(x) i sin(x-3)
+    y1 = sin(x)
+    y2 = sin(x - p)
+    y3 = sin(2*k - x)
+    
+    // Wykres
+    plot(x, y1, 'r')  
+    plot(x, y2, 'b')  // przesunięcie o p
+    plot(x, y3, 'g')  // odbicie względem prostej x=k
+    xlabel('x')  
+    ylabel('y')      
+    title('Wykres') 
+    legend('sin(x)', 'sin(x-p)','odbicie w x=k')     
+
+endfunction
