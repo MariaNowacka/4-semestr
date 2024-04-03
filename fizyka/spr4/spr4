@@ -1,0 +1,235 @@
+\documentclass{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx} 
+\usepackage[export]{adjustbox}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{subcaption}
+\usepackage{multirow}
+\author{Maria Nowacka}
+\date{czwartek, 17.05}
+\title{\textbf{Wyznaczanie długości fali świetlnej za pomocą siatki dyfrakcyjnej}}
+
+
+\begin{document}
+\maketitle
+
+%\section{Temat: Wyznaczanie długości fali świetlnej za pomocą siatki dyfrakcyjnej}
+
+\section{Wstęp teoretyczny}
+W optyce geometrycznej podstawową cechą światła jest jego prostoliniowe rozchodzenie się w 
+ośrodkach o jednorodnym współczynniku załamania. Stąd definiuje się pojęcie promienia 
+świetlnego. Dyfrakcja to zjawisko,  które polega na uginaniu się promieni 
+świetlnych napotykających przeszkody na swojej drodze. Odstępstwo od prostoliniowego 
+rozchodzenia się światła jest związane z jego falową naturą. Zgodnie z zasadą Huygensa każdy 
+punkt przestrzeni, do którego dochodzi fala padająca może być traktowany jako nowe źródło fali 
+kulistej. Takie elementarne fale spotykają się ze sobą interferują i w ten sposób powstaje nowa 
+fala świetlna.
+Siatka dyfrakcyjna to przyrząd do przeprowadzania analizy widmowej światła. Tworzy ją układ równych, równoległych i jednakowo rozmieszczonych szczelin. Fale przechodzące przez szczeliny mają w nich jednakowe fazy drgań a więc będą się 
+wzmacniać w tych kierunkach, w których będzie spełniony warunek na interferencyjne 
+wzmocnienie natężenie światła:
+$$ d\ sin(\Theta) = n\lambda$$
+gdzie $d$ - stała siatki dyfrakcyjnej, $\Theta$ - kąd odgięcia promieni od ich początkowego biegu, $n$ - rząd widma dyfrakcyjnego, $\lambda$ - długość fali.\\
+Siatki dyfrakcyjne odgrywają bardzo ważną rolę w wielu przyrządach stosowanych w nauce i 
+technice. Szczególnie często siatki są wykorzystywane do otrzymywania światła 
+monochromatycznego lub do rozszczepiania światła i analizy widm.
+\section{Cel ćwiczenia} 
+\begin{itemize}
+    \item Wyznaczenie długości fali emisji lasera lub innego źródła światła 
+    monochromatycznego.
+    \item Wyznaczenie stałej siatki dyfrakcyjnej.
+\end{itemize}
+
+\section{Schemat układu pomiarowego}
+Przyrządy: \\
+ – siatki dyfrakcyjne typu "A" - 50 linii na milimetr oraz typu "B", \\
+ – laser, \\
+ – ekran ze skalą milimetrową, \\
+ – ława optyczna ze skalą milimetrową,\\
+ - szczelina.\\
+Schemat znajduje się na Rysunku 1.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{siatka.png}
+\caption{Schemat układu pomiarowego}
+\end{figure}
+%\begin{figure}
+%\includegraphics[width=11cm,height=6cm,angle=0]{schemat.png}'
+%\end{figure} \\
+
+\section{Opis metody pomiarowej}
+Ustaw układ w odpowiedni sposób i upewnienij się, że wiązka światła z lasera rozprasza się w pozycji "0" na ekranie. 
+
+Część A \\
+Wstaw siatkę dyfrakcyjną oznaczoną literą “A” tak, aby wiązka światła przechodziła przez jej środek. Na ekranie zaobserwuj kolejne rzędy dyfrakcji 
+światła po obu stronach pozycji “0”.
+Ustaw siatkę w odległości $L_1 = 300 \text{mm}$ od ekranu.
+Odczytaj i zanotuj $L_i$ wraz z niepewnością odczytu oraz pozycje linii siatki dyfrakcyjnych po prawej i po lewej stronie (wraz z niepewnoąścią). Odczyt wykonaj dla $n = 1, 2$ rzędu dyfrakcji dla pozycji $L_i$ od 30 do 50 cm, co 10 cm.
+
+Część B \\
+Wstaw siatkę dyfrakcyjną oznaczoną literą “B” tak, aby wiązka światła przechodziła przez jej środek. Na ekranie zaobserwuj kolejne rzędy dyfrakcji światła po obu stronach pozycji “0”. Ustaw siatkę w odległości $L_1 = 10\ \text{cm}$ od ekranu. Odczytaj i zanotuj $L_i$ wraz z niepewnością związaną z odczytem jej wartośći $u(L_i)$ oraz odczytaj pozycję linii dyfrakcyjnych po prawej i po lewej stronie dla $n=1$ rzędu dyfrakcji. Powtórz ostatni krok, zmieniając odległość siatki od ekranu co 2 cm, do 30 cm.
+
+\section{Wyniki pomiarów}
+Wyniki pomiarów znajdują się w tabelach: Tabela 1 i Tabela 2.
+\begin{table}[h]
+   \centering
+   \begin{tabular}{|*{6}{c|}}
+        \hline
+        $L_i\ [\text{cm}]$ & $u(L_i)\ [\text{mm}]$ & $n$ & $x_l\ [\text{cm}]$ & $x_p\ [\text{cm}]$ & $u(x)\ [\text{mm}]$ \\ \hline
+        \multirow{2}{*}{30} & \multirow{6}{*}{0,58} & $1$	& $1,0$ & $0,9$ & \multirow{6}{*}{0,58} \\ \cline{3-5}
+        & & $2$ & $1,9$ & $1,9$ &\\ \cline{1-1} \cline{3-5}
+        \multirow{2}{*}{40} &  & $1$ & $1,2$ & $1,3$ &\\  \cline{3-5}
+        & & $2$ & $2,5$ & $2,6$ &\\ \cline{1-1} \cline{3-5}
+        \multirow{2}{*}{50} & & $1$	& $1,6$ & $1,7$ &\\ \cline{3-5}
+        & & $2$ & $3,2$ & $3,2$ &\\ \hline
+    \end{tabular}
+   \caption{Wyniki pomiarów - część A}
+   \label{tab:my_label}
+\end{table}
+
+\begin{table}[h]
+   \centering
+   \begin{tabular}{|*{5}{c|}}
+   \hline
+        $L_i\ [\text{cm}]$ & $u(L_i)\ [\text{mm}]$& $x_l\ [\text{cm}]$ & $x_p\ [\text{cm}]$  & $u(x)\ [\text{mm}]$\\ \hline
+        $10$ & \multirow{11}{*}{0,58} & $3,5$ & $3,3$ & \multirow{11}{*}{0,58}\\ \cline{1-1} \cline{3-4}
+        $12$ & & $4,2$ & $4,0$ & \\ \cline{1-1} \cline{3-4}
+        $14$ & & $4,8$ & $4,6$ & \\ \cline{1-1} \cline{3-4}
+        $16$ & & $5,5$ & $5,3$ & \\ \cline{1-1} \cline{3-4}
+        $18$ & & $6,2$ & $5,9$ & \\ \cline{1-1} \cline{3-4}
+        $20$ & & $6,8$ & $6,5$ & \\ \cline{1-1} \cline{3-4}
+        $22$ & & $7,5$ & $7,2$ & \\ \cline{1-1} \cline{3-4}
+        $24$ & & $8,2$ & $7,9$ & \\ \cline{1-1} \cline{3-4}
+        $26$ & & $8,8$ & $8,5$ & \\ \cline{1-1} \cline{3-4}
+        $28$ & & $9,5$ & $9,1$ & \\ \cline{1-1} \cline{3-4}
+        $30$ & & $10,3$ & $9,7$ & \\ \hline
+    \end{tabular}
+   \caption{Wyniki pomiarów - część B}
+   \label{tab:my_label}
+\end{table}
+
+\section{Wzory i obliczenia}
+\subsection{Część A}
+W części A wyznaczymy długość fali emisji lasera.
+\begin{enumerate}
+    \item Dla każdego rzędu dyfrakcji $n = 1,\ 2$ oraz odległości $L_i$ ekranu od siatki obliczamy wartość średnią odległości linii dyfrakcyjnej od pozycji zerowego rzędu dyfrakcji
+    $$\overline{x}_{n,i} = \frac{x_{nli} + x_{npi}}{2}$$
+%    oraz wyznaczamy niepewność.
+    Przykładowo dla $L_1 = 30\ \text{cm} $ i $n=1$ 
+    $$\overline{x}_{1,1} = \frac{1 + 0,9}{2} = 0,95\ \text{cm} $$
+    \item Obliczamy odpowiedni sinus kąta ugięcia:
+    $$sin(\Theta_{n,i}) = \frac{\overline{x}_{n,i}}{\sqrt{\overline{x}_{n,i}^2 + L_i^2}} $$
+    Dla tego samego pomiaru:
+    $$sin(\Theta_{1,1}) = \frac{0,95}{\sqrt{0,95^2 + 30^2}} = 0,03165080128$$    
+    \item Obliczamy długość fali emisji światła emitowanego przez laser zgodnie z zależnością:
+    $$\lambda_{n,i} = \frac{d \cdot sin(\Theta_{n,i})}{n}$$
+    gdzie: $n=1,\ 2$ są kolejnymi rzędami dyfrakcji, $i$ oznacza ideks kolejnego położenia $L_i$, a $d = 2 \mu$m to stała siatki dyfrakcyjnej. \\
+    Przykładowo:
+    $$\lambda_{1,1} = \frac{0,002 \cdot 0,03165080128}{1} = 0,00006330160257\ \text{cm} $$
+    \item Obliczamy wartość średnią $\overline{\lambda}$ długości fali emisji.
+    $$\overline{\lambda} = \sum_{k=1}^6 \lambda_k = 0,00006373867935\ \text{cm} $$
+\end{enumerate}
+Pozostałe wartości znajdują się w Tabeli 3.
+\subsection{Część B}
+W części B wyznaczamy stałą siatki dyfrakcyjnej.
+\begin{enumerate}
+    \item Dla każdej odległości $L_i$ i $n=1$ rzędu dyfrakcji obliczamy wartość średnią odległości linii dyfrakcyjnej od pozycji zerowego rzędu dyfrakcji
+    $$\overline{x}_{i} = \frac{x_{li} + x_{pi}}{2}$$
+    \item Obliczamy odpowiedni sinus kąta ugięcia:
+    $$sin(\Theta_{i}) = \frac{\overline{x}_{i}}{\sqrt{\overline{x}_{i}^2 + L_i^2}} $$
+    \item Wyznaczamy wartość średnią $\overline{sin \Theta_i}$ 
+    $$\overline{sin \Theta_i} = \frac{1}{11} \sum_{i=1}^{11} (sin(\Theta_i) = 0,3181242302 $$
+    \item Wyznaczamy stałą siatki dyfrakcyjnej $d$ ze wzoru:
+    $$d =  \left.\frac{n \overline{\lambda}}{\overline{sin\Theta}} \right|_{n=1} = \frac{0,00006373867935 }{0,3181242302}  = 0,0002003578266\ \text{cm}$$
+\end{enumerate}
+Wszystkie wartości znajdują się w Tabeli 4.
+
+\section{Analiza niepewności pomiarowych}
+Niepewność pomiaru przy użyciu ławy optycznej: 
+$\Delta_p L_i = \pm 1\ \text{mm}$ \\
+Niepewność standardowa:\\
+$$u(L_i) = \frac{\Delta_p L_i}{\sqrt{3}} =\frac{\pm 1\ \text{mm}}{\sqrt{3}} = 0,577325\ \text{mm} \approx \pm 0,58\ \text{mm} $$ 
+Niepewność pomiaru przy użyciu skali milimetrowej ekranu: 
+$\Delta_p x_l = \Delta_p x_p = \pm 1\ \text{mm}$ 
+\subsection{Część A }
+Niepewność wartości średniej odległości linii dyfrakcyjnej od pozycji 
+zerowego rzędu dyfrakcji $x_n$
+$$u_c(\overline{x}_{n,i}) = \sqrt{\left( \frac{\partial \overline{x}_{n,i}}{\partial x_{n,l,i}} u(x_{n,l,i})\right)^2 + \left( \frac{\partial \overline{x}_{n,i}}{\partial x_{n,p,i}} u(x_{n,p,i})\right)^2} = \sqrt{\frac{1}{2}u^2(x_n)} = \sqrt{\frac{0,1\ \text{cm}}{2 \cdot \sqrt{3}^2}} = 0,04082482905 \ \text{cm} \approx 0,041\ \text{cm}$$
+Niepewność sinusa kąta ugięcia:
+$$u_c(sin(\Theta_{n,i})) = \sqrt{\left( \frac{L_i \overline{x}_{n,i}}{(L_i^2 + \overline{x}_{n,i}^2)^\frac{3}{2}} \cdot u(L) \right)^2 + \left(\frac{L_i^2}{(L_i^2 + \overline{x}_{n,i}^2)^\frac{3}{2}} \cdot u(\overline{x}_{n,i}) \right)^2} $$
+Dla $n=1, i=1$
+$$u_c(sin(\Theta_{1,1})) = \sqrt{\left( \frac{30 \cdot 0,95}{(30^2 + 0,95^2)^\frac{3}{2}} \cdot 0,058 \right)^2 + \left(\frac{30^2}{(30^2 + 0,95^2)^\frac{3}{2}} \cdot 0,041) \right)^2} = 0,0118934321 \approx 0,012 $$
+% Niepewność $\lambda_{n,i}$\\
+% $$u_c(\lambda_{n,i}) = \frac{d}{n} \cdot u(sin(\Theta_{n,i}))$$
+Niepewność standardowa długości fali emisji $u(\overline{\lambda)}$
+$$u(\overline{\lambda}) = \sqrt{\frac{1}{5 \cdot 6} \sum_{k=1}^6 (\lambda_k - \overline{\lambda})^2} = 0,0000004853954617\ \text{cm} \approx 4,9\ \text{nm}$$
+\subsection{Część B}
+Niepewność wartości średniej odległości linii dyfrakcyjnej od pozycji 
+zerowego rzędu dyfrakcji $x_i$ oraz niepewność sinusa kąta ugięcia $u_c(sin(\Theta_{i}))$ obliczamy podobnie jak w części A 
+$$u_c(\overline{x}_{i}) = \sqrt{\left( \frac{\partial \overline{x}_{i}}{\partial x_{l,i}} u(x_{l,i})\right)^2 + \left( \frac{\partial \overline{x}_{i}}{\partial x_{p,i}} u(x_{n,p,i})\right)^2} = \sqrt{\frac{1}{2}u^2(x)} = \sqrt{\frac{0,1\ \text{cm}}{2 \cdot \sqrt{3}^2}} = 0,04082482905 \ \text{cm} \approx 0,041\ \text{cm}$$
+$$u_c(sin(\Theta_{i})) = \sqrt{\left( \frac{L_i \overline{x}_{i}}{(L_i^2 + \overline{x}_{i}^2)^\frac{3}{2}} \cdot u(L_i) \right)^2 + \left(\frac{L_i^2}{(L_i^2 + \overline{x}_{i}^2)^\frac{3}{2}} \cdot u(\overline{x}_{i}) \right)^2} $$
+dla $i = 1$
+$$u_c(sin(\Theta_{1})) = \sqrt{\left( \frac{10\cdot 3,4}{(10^2 + 3,4^2)^\frac{3}{2}} \cdot 0,058 \right)^2 + \left(\frac{10^2}{(10^2 + 3,4^2)^\frac{3}{2}} \cdot 0,041 \right)^2} = 0,0118934321 \approx 0,012\ \text{cm} $$
+Odchylenie standardowe $u(\overline{sin(\Theta)})$
+$$u(\overline{sin(\Theta)}) = \sqrt{\frac{1}{11} \sum_{i=1}^{11} (sin(\Theta_i) - \overline{sin(\Theta)})^2} = 0,00253426867 \approx 0,0026 $$
+Niepewność związana z wyznaczeniem stałej siatki 
+dyfrakcyjnej:
+$$u_c(d) = \left. \sqrt{\left( \frac{n}{\overline{sin(\Theta)}}u(\overline{\lambda}) \right)^2 + \left( \frac{n \overline{\lambda}}{\overline{sin(\Theta)}^2} u(\overline{sin(\Theta)})\right)^2} \right|_{n=1} = 0,000002208085193 \approx 0,0000023\ \text{cm} $$ \\
+\\
+Wszytkie obliczone niepewności znajdują się w Tabeli 3 (część A) i Tabeli 4 (część B). \\
+\begin{table}[h]
+   \centering
+   \begin{tabular}{|*{7}{c|}}
+        \hline
+        $L_i\ [\text{cm}]$ & $u(L_i)\ [\text{cm}]$ & $\overline{x}_{n,i}\ [\text{cm}]$ & $u(\overline{x}_{n,i})\ [\text{cm}]$ & $sin(\Theta_{n,i})$ & $u_c(sin(\Theta_{n,i})$ & $\lambda_{n,i}\ [\text{cm}]$\\ \hline
+        \multirow{2}{*}{30} & \multirow{6}{*}{0,058} & $0,95$ & \multirow{6}{*}{0,041} & $0,0317$ & $0,0075$ & $0,00006330$ \\ \cline{3-3} \cline{5-7}
+        & & $1,9$ & & $0,0632$ & 0,0075 & 0,00006321\\ \cline{1-1} \cline{3-3} \cline{5-7}
+        \multirow{2}{*}{40} & & $1,25$ & & $0,0312$ & $0,00645$ & $0,00006247$ \\ \cline{3-3} \cline{5-7}
+        & & $2,55$ & & $0,0636$ & 0,0065 & 0,00006362\\ \cline{1-1} \cline{3-3} \cline{5-7}
+        \multirow{2}{*}{50} &  & $1,65$ &  & $0,0330$ & $0,0058$ & $0,00006596$ \\ \cline{3-3} \cline{5-7}
+        & & $3,2$ & & $0,0639$ & 0,0058 & 0,00006387\\ \hline \hline
+        \multicolumn{4}{|c|}{Wartość średnia} & \multicolumn{2}{|c|}{$\overline{\lambda}$ (nm) = } & $637,4$ \\ \hline
+        \multicolumn{4}{|c|}{odchylenie standardowe} & \multicolumn{2}{|c|}{$u(\overline{\lambda})$ (nm) = } & $4,9$ \\ \hline
+    \end{tabular}
+   \caption{Wyniki obliczeń - część A}
+   \label{tab:my_label}
+\end{table}
+
+\begin{table}[h]
+   \centering
+   \begin{tabular}{|*{4}{c|}}
+   \hline
+        $\overline{x}_i\ [\text{cm}]$ & $u(\overline{x}_i)\ [\text{cm}]$& $sin(\Theta_i)$ & $u(sin(\Theta_i))$  \\ \hline
+        $3,400$ & \multirow{11}{*}{0,041} & $0,3220$ & $0,0120$ \\ \cline{1-1} \cline{3-4}
+        $4,100$ & & $0,3230$ & $0,0110$  \\ \cline{1-1} \cline{3-4}
+        $4,700$ & & $0,3180$ & $0,0110$  \\ \cline{1-1} \cline{3-4}
+        $5,400$ & & $0,3198$ & $0,0095$  \\ \cline{1-1} \cline{3-4}
+        $6,050$ & & $0,3186$ & $0,0089$  \\ \cline{1-1} \cline{3-4}
+        $6,650$ & & $0,3155$ & $0,0085$  \\ \cline{1-1} \cline{3-4}
+        $7,350$ & & $0,3169$ & $0,0081$  \\ \cline{1-1} \cline{3-4}
+        $8,050$ & & $0,3180$ & $0,0077$  \\ \cline{1-1} \cline{3-4}
+        $8,650$ & & $0,3157$ & $0,0075$  \\ \cline{1-1} \cline{3-4}
+        $9,300$ & & $0,3152$ & $0,0071$  \\ \cline{1-1} \cline{3-4}
+        $10,000$ & & $0,3162$ & $0,0069$ \\ \hline \hline
+        \multicolumn{2}{|c|}{Wartość średnia} & $\overline{sin(\Theta)}$ = & 0,3181\\ \hline
+        \multicolumn{2}{|c|}{Niepewność} & $u(\overline{sin(\Theta)})$ = & 0,0026 \\ \hline
+        \multicolumn{2}{|c|}{Stała siatki} & $d\ \mu $m = & 0,2004 \\ \hline
+        \multicolumn{2}{|c|}{Niepewność} & $u_c(d)\ \mu $m = & 0,0023\\ \hline
+    \end{tabular}
+   \caption{Wyniki obliczeń - część B}
+   \label{tab:my_label}
+\end{table}
+
+\section{Wyniki końcowe}
+Podsumowując wszzystkie obliczenia, możemy zapisać:
+$$\overline{\lambda} = (0,00006374 \pm 0,00000049)\ \text{cm} = (6,374 \pm 0,049) \cdot 10^{-7}\ \text{m}$$  
+$$d = (0,0002004 \pm 0,0000023)\ \text{cm} = (2,004 \pm 0,023)\cdot 10^{-6}\ \text{m}$$
+
+\section{Wnioski}
+\begin{itemize}
+    \item Dzięki zjawisku dyfrakcji możliwe jest obliczenie długości fali świetlnej.
+    \item Wyznaczona przez nas długość fali światła mieści się w zakresie długości światła czerwonego (627–780 nm)
+    \item  Korzystając z obliczonej długości fali oraz potrzebnych pomiarów, wyznaczyliśmy stałą siatki dyfrakcyjnej - możemy przybliżyć, że na siatce jest około 500 rys na 1 mm siatki.
+\end{itemize}
+
+\end{document}
