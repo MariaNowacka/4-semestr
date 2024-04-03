@@ -1,0 +1,266 @@
+\documentclass{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx} 
+\usepackage[export]{adjustbox}
+\usepackage{polski}
+\usepackage{mathtools}
+\usepackage{subcaption}
+\title{Maria Nowacka, czwartek 17.05}
+%\author{Maria Nowacka}
+%\date{czwartek 17.05}
+
+\begin{document}
+
+\maketitle
+
+\section{Temat: Badanie efektu Halla}
+
+\section{Wstęp teoretyczny}
+Efekt Halla to zjawisko powstawania różnicy potencjałów w płytce przewodzącej, przez którą przepływa prąd, umieszczoną w polu magnetycznym o indukcji B. Napięcie to 
+tworzy się pomiędzy przeciwległymi ściankami płytki w kierunku prostopadłym do 
+kierunku przepływu prądu I, i do kierunku wektora zewnętrznego pola magnetycznego B. Przyczyną zjawiska jest oddziaływanie pola magnetycznego pod postacią siły Lorentza, działającej na cząstki naładowane elektrycznie, poruszające się w polu magnetycznym. Siła ta powoduje m.in. zakrzywianie toru cząstek 
+elektrycznych oraz odchylenie toru ruchu nośników ładunków q, tworzących prąd elektryczny I w przewodzących 
+płytkach (metalowych, półprzewodnikowych),  od linii prostej. Siła Lorentza FL określona jest 
+równaniem:
+$$\vec{F_l} = q(\vec{v} \times \vec{v}),$$ 
+gdzie :
+    q to ładunek elektryczny nośnika,
+$\vec{v}$ oznacza wektor średniej prędkości nośników, $\vec{B}$- wektor indukcji pola magnetycznego, a 
+$\times$ - znak iloczynu wektorowego.\\
+Tak uzyskany wektor będzie prostopadły do wektorów go tworzących, uzyska największą wartość dla $\vec{v} \perp \vec{B}$, a jego kierunek można wyznaczyć kierując się regułą lewej (lub prawej) dłoni. Dla elektronów kierunek ich prędkości $\vec{v}$ będzie przeciwny do kierunku przepływu prądu, możemy zapisać:
+$$\vec{F_L} = - |e| (-\vec{v} \times \vec{B}) = |e| (\vec{v} \times \vec{B}).$$
+Z tego wynika, żę zarówno ładunki dodatnie, jak i ujemne są odchylane pod wpływem siły Lorentza w tę samą stronę, a więc wszystkie ładunki skumulują się na tej samej ścianie płytki, co spowoduje niedomiar odpowiednich nośników ładunku na przeciwległej ściance. Ten nierównomierny rozkład ładunku wytwarza w płytce dodatkowe, poprzeczne pole elektryczne o natężeniu $\vec{E_H}$, o kierunku prostopadłym do kierunku działania pola $\vec{B}$ oraz do kierunku przepływu prądu, co ilustruje Rysunek 1.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{rys1.PNG}
+    \caption{Efekt Halla}
+    \label{fig:r1}
+\end{figure}
+%\begin{minipage}
+%\centering
+%    \includegraphics[scale=0.5]{rys1.png}
+%    \caption{Rys.1. Schemat układu.}
+%\end{minipage}
+Siła $\vec{F_E} = q \vec{E_H}$ przeciwdziała gromadzeniu się ładunków w obrębie jednej ścianki. Przemieszcznie się ładunków ustanie w momencie wyrównania się (co do wartości) sił $\vec{F_L}$ i $\vec{F_E}$, a więc spełniona będzie zależność 
+$$ vB = E_H$$
+dla jednorodnego pola w płytce o szerokości $b$ związek między natężeniem pole $E_H$ a napięciem Halla $U_H$ wyraża się zależnością:
+$$E_H = \frac{U_H}{b}$$
+łącząc oba równania możemy wyznaczyć napięcie Halla przez:
+$$U_H = bvB.$$
+Prędkość $v$ nośników można powiązać z natężeniem prądu $$I = qvnbd,$$ gdzie:\\
+$n$ - koncentracja ładunków, 
+$b$ - szerokość płytki mierzona wzdłuż kierunku pola $\vec{E_H}$,
+$d$ - grubość płytki mierzona wzdłuż kierunku pola $\vec{B}$,
+$I$ - natężenie prądu.
+Wyznaczając z tego wzoru prędkość $v$ i wstawiając ją do wzoru na $U_H$ otrzymujemy:
+$$U_H = \frac{BI}{nqd} = \gamma B\ I$$
+Współczynnik proporcjonalności $\gamma$  zależy od parametrów płytki przewodzącej oraz 
+od rodzaju i technologii wytwarzania materiału, z którego ją wykonano. Znając jego wartość oraz mierząc natężenie prądu $I = IS$ płynącego przez płytkę i napięcie Halla $U_H$ można, wyznaczyć indukcję magnetyczną $B$. Element elektroniczny 
+wykorzystujący efekt Halla nazywa się hallotronem lub czujnikiem Halla. Współczynnik $\gamma$, tzw. 
+stała hallotronu, jest indywidualną cechą hallotronu, świadczącą o jego jakości.\\
+Hallotron to prostopadłościenna płytka półprzewodnika 
+lub metalu, na krawędziach której umieszczone są cztery elektrody: dwie zasilające i dwie 
+pomiarowe. Hallotrony znajdują szerokie zastosowanie w technice, np. do pomiaru natężenia pola 
+magnetycznego, pomiaru wielkości elektrycznych, w napędach CD – ROM, stabilizatorach prędkości w video – odtwarzaczach, programatorach pralek, sygnalizatorach pozycji, wyłącznikach bezkontaktowych, wykrywaczach metali, wskaźnikach ilości gazu w instalacjach LPG, czujnikach bardzo słabych pól magnetycznych.
+\section{Cel ćwiczenia} 
+\begin{itemize}
+    \item Zmierzenie charakterystyk statycznych hallotronu: \\
+    $U_H = f(\alpha)$ i $U_H = f(B_N)$ oraz $U_H = f(I_S)$
+    \item Wyznaczenie czułości polowej  $\gamma_B = \frac{\Delta U_H}{\Delta B}$ i czułości prądowej $\gamma_B = \frac{\Delta U_H}{\Delta I}$ hallotronu.  
+    \item Wyznaczenie koncentracji $n$ swobodnych nośników ładunku. 
+    \item Wyznaczenie maksymalnej czułości kątowej $S_\alpha = \frac{\Delta U_H}{\Delta \alpha}$ hallotronu
+\end{itemize}
+
+
+\section{Schemat układu pomiarowego}
+Przyrządy: \\
+ – amperomierz, \\
+ – woltomierz, \\
+ – zasilacz hallotronu, \\
+ – hallotron umieszczony w polu magnetycznym wytworzonym przez magnesy trwałe. \\
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{sch.png}
+\caption{Schemat układu pomiarowego}
+\end{figure}
+%\begin{figure}
+%\includegraphics[width=11cm,height=6cm,angle=0]{schemat.png}'
+%\end{figure} \\
+
+\section{Opis metody pomiarowej}
+Po ustawieniu odpowiedniego (ustalonego z prowadzącym) natężenia prądu, włączeniu mierników i zanotowaniu ich zakresów i klas, wykonać pomiary napięci Halla dla kątów od $0 ^{\circ}$ do $360 ^{\circ}$, co $10 ^{\circ}$. Wyznaczyć kąt $\alpha_0$, sprawdzając dla jakiego kąta $U_H$ wynosi $0\ V$ i dodając do wyniku $90 ^{\circ}$. Następnie dla ustalonego kąta $\alpha$ wykonać pomiary napięcia $U_H$ dla $I_S$ w zakresie od $0\ mA$ do $15\ mA$ co $1\ mA$.
+\section{Wyniki pomiarów}
+%\begin{table}[]
+%    \centering
+%    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+%        & $lp$ & $\phi_w$ & $\Delta_p \phi_w$ & $\phi_z$ & $\Delta_p \phi_z$ & $h$ & $\Delta_p h$ & $m$& $\Delta_p m$ \\ \hline
+%        & $1.$ &$11,85$	 &	$0,05$ &$16$ & $0,01$	& $22,05$	& $0,05$ & $5,17$ &$0,01$ \\
+%        & $2.$ & $12$ & $0,05$ & $16,01$ & $0,01$ & $22,5$ & $0,05$ & $5,41$ & $0,01$ \\
+%        & $3.$ & $12$ & $0,05$ & $16,01$ & $0,01$ & $22,45$ & $0,05$ & $5,7$ & $0,01$ \\
+%        & $4.$ & $11,75$ & $0,05$	& $16$ & $0,01$ & $22,4$ & $0,05$ & $5,49$ & $0,01 $\\
+%        & $5.$ & $11,8$ & $0,05$ & $16,01$ & $0,01$ & $22,5$ & $0,05$ & $5,64$ & $0,01$ \\
+%    \end{tabular}
+%    \caption{Wyniki pomiarów}
+%    \label{tab:my_label}
+%\end{table}
+% zmienić to na tabele!!!!!!!!!!!!!!!!!
+Pomiary w części pierwszej zostały wykonane dla natężenie prądu $I_S = 14\ mA$. Zmierzony kąt, dla którego naoięcie Halla $U_H = 0 \ V$ wynosi $\alpha_0 = -5^\circ .$
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.6\textwidth}
+  \centering
+  \includegraphics[1.0\linewidth]{tab1.png}
+  \caption{Część 1.}
+\end{subfigure}
+\hspace{0.05\textwidth}
+\begin{subfigure}{0.25\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{tab2.png}
+  \caption{Część 2.}
+\end{subfigure}
+\caption{Wyniki pomiarów}
+\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.6\linewidth]{tab1.png}
+%\caption{Wyniki pomiarów - część 1.}
+%\end{figure}
+W części drugiej pomiary wykonano dla ustalonego kąta $\alpha = 90^\circ.$
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.25\linewidth]{tab2.png}
+%\caption{Wyniki pomiarów - część 2.}
+%\end{figure}
+Tabele wyników są widoczne na Rysunku 3.
+\section{Obliczenia}
+\subsection{Część 1.}
+Wyznaczanie charakterystyki kątowej hallotronu przedstawiono na wykresie (Rysunek 4.).\\
+Czułość kątowa $S_{\alpha}$ wyraża się wzorem:
+$$S_{\alpha} = \frac{\Delta U_H}{\Delta \alpha}.$$
+Z wykresu możemy określić obszar najszybszych zmian, dla $\alpha \in [120^{\circ}; 240^\circ]$, która w przybliżeniu wynosi: \\
+$S_\alpha = \frac{0,249 V - (-0,29 V)}{240^\circ - 120^\circ} = 0,00449\ \frac{V}{^\circ} $ lub
+$S_\alpha = \frac{0,249 V - (-0,29 V)}{\frac{4 \pi}{3} - \frac{2\pi}{3}} = 0,2574 \pm 0,0063\ 
+\frac{V}{rad}$
+
+Na podstawie wzoru $$B_n = B_0\ sin(\alpha - \alpha_0)$$ możemy obliczyć przykładowe wartości składowej normalnej indukcji magnetycznej $B_n$ dla $\alpha = 60^\circ$, przyjmując $B_0 = (0,500 \pm 0,05)\ T$
+$$B_n = 0,5 \cdot sin(60^\circ -(-5^\circ)) = 0,453153894\ T 
+$$
+Wartości dla pozostałych kątów wraz z niepewnościami znajdują się w Tabeli.\\
+Na ich podstawie sporządzono wykres $U_H = f(B_n)$ (Rysunek 6).\\
+Stosując regresję liniową możęmy wyznaczyć współczynniki dopasowania (linii trędu $y =ax + b$), obliczyć ich niepewności oraz wyznaczyć współczynnik korelacji.\\
+Obliczone współczynniki mają wartośći:\\ 
+$$a = (0,6282 \pm 0,0028) \frac{V}{T}$$
+$$b = (-0,00447 \pm 0,00095)\ V$$\\
+Współczynnik korelacji: 
+$R_K = 0,99934736$\\
+
+Przykładowe wartośći $\gamma = \frac{U_H}{I_SB_n}$ możemy obliczyć dla pomiaru 10.\\
+$$\gamma = \frac{0,306\ V}{0,014\ A\cdot 0,498097
+\ T } \approx 43,88127 \frac{V}{AT}$$ \\
+Ostateczną wartość czułości polowej $\gamma_B \equiv \gamma$ obliczamy na podstawie współczynników kierunkowych linii trendu oraz ich niepewnośći.
+$$\gamma = \frac{a}{I_S} = \frac{0,628213661 \frac{V}{T}
+}{0,014\ A} = (44,88 \pm 0,24)
+\frac{V}{TA}$$
+Na podstawie tej wielkości możemy obliczyć koncentrację $n$ swobodnych nośników ładunku
+$$n = \frac{1}{e\ \gamma\ d},$$
+gdzie: $d$ - grubość płytki hallotronu ($d = 2 \mi m, u_r(d) = 5\%$), $e$ - ładunek elementarny ($e = 1,602 \cdot 10^{-19}\ C$)
+$$n = \frac{1}{1,602 \cdot 10^{-19}\ C \cdot 44,88
+\frac{V}{TA} \cdot 2 \mu m} = (7 \pm 0,7 )\cdot 10^{22} \frac{1}{m^3}$$
+\subsection{Część druga}
+W drugiej części eksperymentu mieliśmy sporządzić wykres zależności $U_H = f(I_S)$ przy $B_n =$ const. Widać go na Rysunku 7.
+Używając regresji liniowej możemy wyznaczyć współczynniki prostej  najlepszego
+dopasowania  dla zmierzonych zależności $U_H = f(I_S)$, ich
+niepewności oraz współczynnik korelacji $R_K$.
+$$a = 21,734
+\pm 0,095\ \frac{V}{T}$$
+$$b = 0,00393
+\pm 0,00084\ V$$
+$$R_K = 0,9997 \pm 0,0018 $$
+Na ich podstawie możemy narysować na wykresie linię trędu (Rysunek 8.)\\
+(Niepewności pomiarowe są na tyle małe, że ciężko jest je dostrzec na wykresie.)\\
+Z wykresu wybieramy jeden punkt i obliczamy dla niego wartość $\gamma_i = \frac{U_H}{I_SB_0sin(\alpha-\alpha_0}$, (dla $\alpha = \frac{\pi}{2})$ np.
+$$\gamma_6 = \frac{0,136\ V}{6\ mA \cdot 0,341630857\ T} = (8,145453777
+ \pm 4,955533341) \frac{V}{AT}
+$$
+Znając wartości współczynników kierunkowych linii trendu oraz ich niepewności możemy obliczyć ostateczną wartość czułości prądowej $\gamma_I \equiv \gamma$
+$$\gamma = \frac{a}{B_n} = \frac{21,733824\ V
+}{0,498097349 AT
+} = (43,6 \pm 8,4)
+\frac{V}{AT}
+$$
+Tak jak w pierwszej części liczymy wartorść kondensacji $n$, podstawiając do wzoru i uzyskujemy:
+$$n = \frac{1}{1,602 \cdot 10^{-19}\ C \cdot 43,6
+\frac{V}{TA} \cdot 2 \mu m} = (7,15 + 0,72) \cdot 10^{22} \frac{1}{m^3}$$
+\section{Analiza niepewności pomiarowych}
+Niepewności urządzeń pomiarowych:\\
+- woltomierza: 
+$\Delta_p U = \pm 0,05\% rdg + 3 \cdot dgt$ \\
+- amperomierza:
+$\Delta_p I = \frac{klasa \cdot zakres}{100} = \frac{0,5 \cdot 15\ mA}{100} = 0,075\ mA$ \\
+- kąta:
+$\Delta_p\alpha = \pm 5^\circ$ \\
+- indukcji magnetycznej: $\Delta_p B_0 = \pm 0,05\ T$\\
+Z czego możemy obliczyć niepewności standardowe:\\
+- Niepewnoćś standardowa napięcia Halla w dla $\alpha = 90^\circ$:\\ 
+$$u(U_H) = \frac{\Delta_p U}{\sqrt{3}} =\frac{\pm 0,05\% \cdot 0,306\ V + 3 \cdot 0,001}{\sqrt{3}} = 0,001820385\ V \approx \pm 0,0019 V
+$$ 
+- Niepewność natężenia: \\
+$$u(I_S) = \frac{\Delta_p I}{\sqrt{3}} = \frac{0,075\ mA}{\sqrt{3}} = 0,0433012\ mA \approx 0,044\ mA = 4,4 \cdot 10^{-5}\ A$$
+- Niepewność kąta:
+$$u(\alpha) = \frac{\Delta_p \alpha}{\sqrt{3}} = \frac{5^\circ}{\sqrt{3}} = \frac{0,087266463 \ rad}{\sqrt{3}} \approx 0,051\ rad$$ 
+- składowej normalnej wektora indukcji magnetycznej dla wybranego $\alpha = \pi$ i $\alpha_0 = 5^\circ = 0,087266\ rad$
+$$
+    u_c(B_n) = \sqrt{ \left( \frac{\partial Bn}{\partial B_0} u(B_0)\right)^2 + \left( \frac{\partial Bn}{\partial \alpha} u(\alpha)\right)^2 + \left( \frac{\partial Bn}{\partial \alpha_0} u(\alpha_0)\right)^2} 
+$$
+$$
+    = \sqrt{ \left( sin(\alpha - \alpha_0)\frac{\Delta_p B_0}{\sqrt{3}} u(B_0)\right)^2 + \left(B_0\ cos(\alpha - \alpha_0)\  \frac{\Delta_p \alpha}{\sqrt(3)}\right)^2 + \left( -B_0\ cos(\alpha - \alpha_0)\ \frac{\Delta_p \alpha_0}{\sqrt{3}}\right)^2} 
+$$
+$$
+    = 0,056172279 \ T \approx 0,057\ T
+$$
+- Niepewność współczynnnika $\gamma_i $ - czułości polowej hallotronu (otrzymujemy analogicznie do poprzedniej niepewności złożonej) dla $\alpha = 90^\circ$
+$$u_c(\gamma_10) = \sqrt{ \left( \frac{1}{I_SB_n}u(U_H) \right)^2 + \left( \frac{-1}{B_nI^2_S}u(I_S)\right)^2 + \left( \frac{-1}{B^2_nI_S}u(B_n) \right)^2} \approx 2,6 \frac{V}{AT}$$
+- Niepewność czułości polowej $\gamma$ obliczamy ze wzoru:
+$$u_c(\gamma) = \sqrt{\left( \frac{\partial \gamma}{\partial a}u(a) \right)^2 + \left( \frac{\partial \gamma}{\partial I_S}u(I_S)\right)^2} = \sqrt{\left( \frac{1}{I_S} u(a) \right)^2 + \left( \frac{-a}{I^2_S}u(I_S)\right)^2} =  0,24 \frac{V}{AT}
+$$
+- Niepewność kondensacji - analogicznie podstawiając do wzoru na niepewność złożoną (pomijąc jednak niedokładność stałej ładunku elementarnego) otrzymujemy:
+$$u_c(n) = \sqrt{\left( \frac{-u(\gamma)}{e\gamma^2d} \right)^2 + \left(\frac{-u(d)}{e\gamma d^2} \right)^2} = 6,955 \cdot 10^{21} \frac{1}{m^3}$$
+
+\section{Wyniki końcowe}
+Ostateczne wartości $\gamma$ oraz $n$ dla wersji podstawowej oraz dodatkowej ćwiczenia prezentują się w powyższy sposób:
+$$\gamma_p =  (44,88 \pm 0,24)
+\frac{V}{AT}$$
+$$\gamma_d = (43,6 \pm 8,4) \frac{V}{AT}
+$$
+$$n_p = (7 \pm 0,7 )\cdot 10^{22} \frac{1}{m^3}$$
+$$n_d =  (7,15 + 0,72) \cdot 10^{22} \frac{1}{m^3}$$
+Patrząc na wyniki można stwierdzić, że pierwsza metoda pomiarowa, przy stałym natężeniu prądu $I_S$ daje dokładniejsze wyniki od pomiarów przy stałym kącie $\alpha$.\\
+Wszystkie wyniki wraz z niepewnościami znajdują się w osobnej Tabeli (tabelach).
+\section{Wnioski}
+Przeprowadzone doświadczenie pozwoliło zbadać własności i charakterystyki statystyczne hallotronu. Potwierdzają one teorię opisującą efekt Halla. Zauważalna jest silna relacja między wynikami pomiarów i katem odchylenia hallotronu. Porównanie wyników z materiałami do ćwiczeń wskazuje, że płytka hallotronu jest zrobiona z półprzewodników domieszkowanych.
+\section{Wykresy}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\linewidth]{wykr1.png}
+\caption{Charakterystyka kątowa hallotronu}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{wykr2.png}
+\caption{Wykres zależności napięcia od indukcji}
+\end{figure}
+\begin{figure}
+\includegraphics[width=15cm,height=7cm,angle=0]{wykr3.png}
+\caption{Wykres zależności napięcia od indukcji - z regresją liniową}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{wykr4.png}
+\caption{Zależność napięcia Halla od natężenia.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{wykr5.png}
+\caption{Zależność napięcia Halla od natężenia - z regresją liniową.}
+\end{figure}
+\end{document}
