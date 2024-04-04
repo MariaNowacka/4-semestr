@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{polski}
+\usepackage{mathtools}
+\title{sprawozdanie}
+\author{Maria Nowacka}
+\date{czwartek 17.05}
+
+\begin{document}
+
+\maketitle
+
+\section{Temat: Badanie efektu Halla}
+
+\section{Wstęp teoretyczny}
+Efekt Halla to zjawisko powstawania różnicy potencjałów w płytce przewodzącej, przez którą przepływa prąd
+    
+\section{Cel ćwiczenia} 
+\begin{itemize}
+    \item Zmierzenie charakterystyk statycznych hallotronu: \\
+    $U_H = f(\alpha)$ i $U_H = f(B_N)$ oraz $U_H = f(I_S)$
+    \item Wyznaczenie czułości polowej  $\gamma_B = \frac{\Delta U_H}{\Delta B}$ i czułości prądowej $\gamma_B = \frac{\Delta U_H}{\Delta I}$ hallotronu.  
+    \item Wyznaczenie koncentracji $n$ swobodnych nośników ładunku. 
+    \item Wyznaczenie maksymalnej czułości kątowej $S_\alpha = \frac{\Delta U_H}{\Delta \alpha}$ hallotronu
+\end{itemize}
+
+\section{Schemat układu pomiarowego}
+Przyrządy: \\
+ – amperomierz, \\
+ – woltomierz, \\
+ – zasilacz hallotronu, \\
+ – hallotron umieszczony w polu magnetycznym wytworzonym przez magnesy trwałe. \\
+ 
+Na schemacie przedstawiono mierzone parametry wraz z oznaczeniami.
+%\begin{figure}
+%\includegraphics[width=11cm,height=6cm,angle=0]{schemat.png}'
+%\end{figure} \\
+
+\section{Opis metody pomiarowej}
+Po ustawieniu odpowiedniego (ustalonego z prowadzącym) natężenia prądu, włączeniu mierników i zanotowaniu ich zakresów i klas, wykonać pomiary napięci Halla dla kątów od $0 ^{\circ}$ do $360 ^{\circ}$, co $10 ^{\circ}$. Wyznaczyć kąt $\alpha_0$, sprawdzając dla jakiego kąta $U_H$ wynosi $0\ V$ i dodając do wyniku $90 ^{\circ}$. Następnie dla ustalonego kąta $\alpha$ wykonać pomiary napięcia $U_H$ dla $I_S$ w zakresie od $0\ mA$ do $15\ mA$ co $1\ mA$.
+\section{Wyniki pomiarów}
+%\begin{table}[]
+%    \centering
+%    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+%        & $lp$ & $\phi_w$ & $\Delta_p \phi_w$ & $\phi_z$ & $\Delta_p \phi_z$ & $h$ & $\Delta_p h$ & $m$& $\Delta_p m$ \\ \hline
+%        & $1.$ &$11,85$	 &	$0,05$ &$16$ & $0,01$	& $22,05$	& $0,05$ & $5,17$ &$0,01$ \\
+%        & $2.$ & $12$ & $0,05$ & $16,01$ & $0,01$ & $22,5$ & $0,05$ & $5,41$ & $0,01$ \\
+%        & $3.$ & $12$ & $0,05$ & $16,01$ & $0,01$ & $22,45$ & $0,05$ & $5,7$ & $0,01$ \\
+%        & $4.$ & $11,75$ & $0,05$	& $16$ & $0,01$ & $22,4$ & $0,05$ & $5,49$ & $0,01 $\\
+%        & $5.$ & $11,8$ & $0,05$ & $16,01$ & $0,01$ & $22,5$ & $0,05$ & $5,64$ & $0,01$ \\
+%    \end{tabular}
+%    \caption{Wyniki pomiarów}
+%    \label{tab:my_label}
+%\end{table}
+\begin{figure}[h]
+    \includegraphics[width=8cm,height=8cm,angle=0]{tab1.png}
+\end{figure}
+\begin{figure}[h]
+    \includegraphics[width=3cm,height=7cm,angle=0]{tab2.png}
+\end{figure}
+\section{Wzory}
+
+\section{Przykładowe obliczenia}
+
+\section{Wyniki obliczeń}
+\begin{figure}[h]
+    \includegraphics[width=13cm,height=7cm,angle=0]{wykr1.png}
+\end{figure}
+
+\section{Analiza niepewności pomiarowych}
+Niepewności urządzeń pomiarowych:\\
+Niepewność woltomierza: 
+$\Delta_p U = \pm 0,05\% rdg + 3 \cdot dgt$ \\
+Niepewność amperomierza:
+$\Delta_p I = \frac{klasa \cdot zakres}{100} = \frac{0,5 \cdot 15\ mA}{100}$ \\
+Nipewność kąta:
+$\Delta_p\alpha = \pm 5^\circ = 0,087266463\ rad$ \\
+Niepewność standardowa pomiaru napięcia: 
+$u_B(U) = \frac{(\Delta_p U)^2}{\sqrt{3}} $\\
+Dodatkowo, jeśli dana wielkość jest zależna od innych, jej niepewność nazywamy niepewnością złożoną i obliczamy ze wzoru:
+\begin{equation*}
+    u_c(y) = \sqrt{\sum_{i=1}^k \left( \frac{\partial y}{\partial x_i} u(x_i)\right)^2}
+\end{equation*}
+
+
+\section{Wyniki końcowe}
+
+\section{Wnioski}
+
+\end{document}
