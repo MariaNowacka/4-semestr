@@ -1,3 +1,5 @@
 pip install black
 pip install black[jupyter]
 black(ścieżka do pliku)
+pip install "black[jupyter]"
+black c:\Users\lab\Downloads\Nowacka_Lista4_dod.ipynb
