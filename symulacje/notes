@@ -1,2 +1,3 @@
 pip install black
 pip install black[jupyter]
+black(ścieżka do pliku)
