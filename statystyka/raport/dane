@@ -1,0 +1,42 @@
+rozmiar danych : (271116, 15)
+rozmiar po usunięciu duplikatów : (30181, 15)
+skąd dane: https://www.kaggle.com/datasets/mysarahmadbhat/120-years-of-olympic-history?resource=download
+z jakiego okresu : 1896 - 2016
+z 263 różnych drużyn (głównie różne kraje)
+X - wzrost [cm]
+ mean : 177.64235777475895,
+ meadiana : 178.0,
+ Q1 : 178.0,
+ Q2 : 178.0,
+ Q3 : 178.0,
+ rozstęp z próby : 0.0,
+ rozstęp międzykwartylowy: 87.0,
+ wariancja z próby: 119.33789296953726,
+ odchylenie: 10.924188435281463
+średnie: 
+  arytmetyczna: 177.64235777475895, 
+  harmoniczna: 176.96679659981922 
+  geometryczna: 177.3053568743275 
+  ucinana: 178.0 
+  winsorowska 178.0058977502402
+Y - waga [kg] 
+# kolejność jak wyżej
+ 73.75355356018687,
+ 73.0,
+ 73.0,
+ 73.0,
+ 73.0,
+ 0.0,
+ 154.0,
+ 225.1497823519005,
+ 15.00499191442303
+średnie
+  arytmetyczna: 73.75355356018687, 
+  harmoniczna: 70.80549004062173 
+  geometryczna: 72.27155407111562 
+  ucinana: 73.0 
+  winsorowska 73.00241874026705
+
+macierz korelacji:
+[1.        , 0.80183082],
+[0.80183082, 1.        ]
