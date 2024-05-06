@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\geometry{
+    top=2cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\title{Analiza wzrostu i wagi sportowców}
+\author{Maria Nowacka i Bartłomiej Mielcarz}
+\date{8 maja 2024}
+
+\begin{document}
+\maketitle
+
+\section{Cel ćwiczenia}
+Celem tego raportu jest statystyczna analiza dwóch zmiennych losowych wzrostu i wagi sportowców, aby zbadać czy istnieje między nimi korelacja, oraz żeby sprawdzić jaki rozkład mają te zmienne.
+
+\section{Źródło danych}
+Dane użyte w tej analizie pochodzą z:
+\\www.kaggle.com/datasets/mysarahmadbhat/120-years-of-olympic-history?resource=download\\Zostały zebrane w okresie 1896 - 2016 (większość danych z lat 1950 - 2016) i opisują pomiary wzrostu X i wagi Y sportowców.
+
+\section{Analiza danych}
+\subsection{Statystyki opisowe}
+\subsubsection{Średnia}
+Średnia to sposób na określenie typowej wartości w grupie danych, jak na przykład wzrost czy waga sportowców. Odpowiedni typ średniej pozwala lepiej zrozumieć rozkład i tendencje w grupie.
+% \\Wartości średnich dla wzrostu:\\
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        arytmetyczna & 177.64235777475895 \\ \hline
+        harmoniczna & 176.96679659981922 \\ \hline
+        geometryczna & 177.3053568743275  \\ \hline
+        ucinana & 178.0 \\ \hline
+        winsorowska & 178.0058977502402 \\ \hline
+        \hline
+        mediana & 178.0 \\ \hline
+    \end{tabular}
+    \caption{średnie wartości dla wzrostu sportowców}
+\end{table}
+% \\Wartości średnich dla wagi: \\
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        arytmetyczna & 73.75355356018687 \\ \hline
+        harmoniczna & 70.80549004062173 \\ \hline
+        geometryczna & 72.27155407111562 \\ \hline
+        ucinana & 73.0 \\ \hline
+        winsorowska & 73.00241874026705 \\ \hline
+        \hline
+        mediana & 73.0 \\ \hline
+    \end{tabular}
+    \caption{średnie wartości wagi sportowców}
+\end{table}
+\subsubsection{Mediana}
+Mediana to wartość środkowa, dzieląca zbiór na dwie równe części. Gdy analizujemy na przykład wzrost sportowców, mediana pokazuje wzrost środkowego sportowca. 
+
+\subsubsection{Odchylenie standardowe}
+Odchylenie standardowe informuje nas o rozproszeniu danych wokół średniej. Im większe odchylenie standardowe, tym mniejsza jednorodność. W naszym przypadku odchylenie standardowe wynosi \textbf{10.92} dla wzrostu, a dla wagi wynosi \textbf{15.00}. 
+
+Takie odchylenie standardowe dla wzrostu, przy średniej arytmetycznej wynoszącej około 178 można uznać za w miare duże. Z tego wynika, że występuje duże zróżnicowanie wzrostu. Większość sportowców ma wzrost bliski okolicy średniej, ale istnieje spora liczba osób o wzroście znacznie niższym lub wyższym. W przybliżeniu można założyć, że około 68\% wszystkich sportowców ma wzrost w przedziale od 167 cm do 189 cm.
+Około 95\% sportowców będzie miało wzrost w przedziale od 156 cm do 200 cm.
+
+Odchylenie standardowe 15 kg przy średniej 73 kg jest stosunkowo większe niż w przypadku wzrostu. To świadczy o tym, że waga sportowców jest bardziej zróżnicowana niż ich wzrost. Około 68\% sportowców waży między 58 kg a 88 kg, a około 95\% sportowców waży między 43 kg a 103 kg, co pokazuje szeroki zakres wagowy. Większe odchylenie standardowe w kontekście wagi może wskazywać na większe zróżnicowanie w grupie sportowców, co może być wynikiem różnic w typach ciał lub specyfikach różnych dyscyplin sportowych. Na przykład, sportowcy uprawiający dyscypliny wymagające większej masy ciała lub siły mogą ważyć znacznie więcej. To, że wartości skrajne są bardziej powszechne w przypadku wagi niż wzrostu sugeruje, że waga jest cechą zmienną i jest bardziej podatna na takie czynniki jak dieta czy trening.
+
+
+\section{Wizualizacje danych}
+\subsection{Histogramy}
+Histogramy dla wzrostu X i wagi Y, pokazujące rozkład danych. Poniższe histogramy i ich gęstości wskazują na fakt, że wartości skrajne są znacznie bardziej widoczne w przypadku wagi, niż w przypadku wzrostu.
+\begin{figure}[ht]
+    \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.45\textheight]{wzrost_gestosc.png}
+        \caption{Histogram i gęstość empiryczna wzrostu}
+        \label{fig:obrazek1}
+    \end{minipage}
+    
+    \vspace{1cm} % Dodajemy odstęp między obrazkami
+    
+    \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.45\textheight]{waga_gestosc.png}
+        \caption{Histogram i gęstość empiryczna wagi}
+        \label{fig:obrazek2}
+    \end{minipage}
+\end{figure}
+
+
+\subsection{Dystrybuanty}
+Dystrybuanty dla obu zmiennych oraz ich wartości teoretyczne.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{dystrybuanta_wzrost.png}
+    \caption{Dystrybuanta empiryczna i teoretyczna wzrostu}
+    \label{fig:Dystrybuanta wzrostu}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{dystrybuanta_waga.png}
+    \caption{Dystrybuanta empiryczna i teoretyczna wagi}
+    \label{fig:Dystrybuanta wagi}
+\end{figure}
+
+\section{Porównanie zmiennych X i Y}
+\subsection{Boxploty}
+Boxploty dla X i Y, przedstawiające rozkład danych i wartości odstające, z których również można wywnioskować, że odchylenie standardowe wagi jest większe niż odchylenie standardowe wzrostu.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[heigth=0.5\textheight]{boxplot_wzrost.png}
+    \caption{Wykres pudełkowy i średnie dla wagi sportowców}
+    \label{fig:Średnie wzrostu}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[heigth=0.4\textheigth]{boxplot_waga.png}
+    \caption{Wykres pudełkowy i średnie dla wagi sportowców}
+    \label{fig:Średnie wagi}
+\end{figure}
+
+\subsection{Macierz korelacji}
+Macierz korelacji między X a Y, wizualizacja zależności statystycznych. Wskazuje ona na korelacje między wzrostem i wagą. Wartość bliska 1 świadczy o tym, że istnieje duże powiązanie między wzrostem a wagą wśród sportowców. 
+
+Maryśka wrzuć tu tą macierz gdzieś
+
+\section{Podsumowanie}
+jeszcze nie wiem co
+
+
+\end{document}
