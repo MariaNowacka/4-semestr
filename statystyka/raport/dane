@@ -42,3 +42,61 @@ macierz korelacji:
 [0.80183082, 1.        ]
 
 współczynnik  korelacji spearmana : 0.8337147846440984
+------------------------------------------------------------------------
+Sport
+Athletics                    3648
+Swimming                     2486
+Rowing                       2104
+Ice Hockey                   1301
+Hockey                       1168
+Gymnastics                   1161
+Fencing                      1109
+Football                     1084
+Canoeing                     1041
+Basketball                   1000
+Wrestling                     967
+Volleyball                    958
+Handball                      937
+Cycling                       845
+Water Polo                    764
+Boxing                        708
+Cross Country Skiing          687
+Sailing                       677
+Equestrianism                 663
+Shooting                      542
+Weightlifting                 532
+Judo                          526
+Speed Skating                 488
+Biathlon                      388
+Alpine Skiing                 354
+Baseball                      333
+Diving                        318
+Bobsleigh                     283
+Short Track Speed Skating     274
+Figure Skating                249
+Synchronized Swimming         214
+Archery                       206
+Luge                          178
+Ski Jumping                   175
+Tennis                        173
+Softball                      172
+Table Tennis                  163
+Badminton                     154
+Modern Pentathlon             153
+Taekwondo                     144
+Nordic Combined               137
+Curling                       131
+Rhythmic Gymnastics           124
+Freestyle Skiing              102
+Snowboarding                   89
+Rugby Sevens                   74
+Beach Volleyball               68
+Triathlon                      30
+Rugby                          30
+Trampolining                   29
+Skeleton                       24
+Tug-Of-War                      8
+Golf                            4
+Lacrosse                        2
+Art Competitions                2
+Name: count, dtype: int64
