@@ -7,7 +7,7 @@
 \usepackage{geometry}
 
 \geometry{
-    top=2cm,
+    top=1.8cm,
     bottom=2.5cm,
     left=2.5cm,
     right=2.5cm
@@ -36,13 +36,13 @@ Dane użyte w tej analizie pochodzą z:
     \centering
     \begin{tabular}{|l|l|}
     \hline
-        arytmetyczna & 177.64235777475895 \\ \hline
-        harmoniczna & 176.96679659981922 \\ \hline
-        geometryczna & 177.3053568743275  \\ \hline
-        ucinana & 178.0 \\ \hline
-        winsorowska & 178.0058977502402 \\ \hline
+        arytmetyczna & 177.64 \\ \hline
+        harmoniczna & 176.97 \\ \hline
+        geometryczna & 177.31  \\ \hline
+        ucinana & 178.00 \\ \hline
+        winsorowska & 178.01 \\ \hline
         \hline
-        mediana & 178.0 \\ \hline
+        mediana & 178.00 \\ \hline
     \end{tabular}
     \caption{średnie wartości dla wzrostu sportowców}
 \end{table}
@@ -51,13 +51,13 @@ Dane użyte w tej analizie pochodzą z:
     \centering
     \begin{tabular}{|l|l|}
     \hline
-        arytmetyczna & 73.75355356018687 \\ \hline
-        harmoniczna & 70.80549004062173 \\ \hline
-        geometryczna & 72.27155407111562 \\ \hline
-        ucinana & 73.0 \\ \hline
-        winsorowska & 73.00241874026705 \\ \hline
+        arytmetyczna & 73.75 \\ \hline
+        harmoniczna & 70.81 \\ \hline
+        geometryczna & 72.27 \\ \hline
+        ucinana & 73.00 \\ \hline
+        winsorowska & 73.00 \\ \hline
         \hline
-        mediana & 73.0 \\ \hline
+        mediana & 73.00 \\ \hline
     \end{tabular}
     \caption{średnie wartości wagi sportowców}
 \end{table}
@@ -75,39 +75,37 @@ Odchylenie standardowe 15 kg przy średniej 73 kg jest stosunkowo większe niż 
 
 \section{Wizualizacje danych}
 \subsection{Histogramy}
-Histogramy dla wzrostu X i wagi Y, pokazujące rozkład danych. Poniższe histogramy i ich gęstości wskazują na fakt, że wartości skrajne są znacznie bardziej widoczne w przypadku wagi, niż w przypadku wzrostu.
+Histogramy dla wzrostu X i wagi Y, pokazujące rozkład danych. Poniższe histogramy i ich gęstości wskazują na fakt, że wartości skrajne są znacznie bardziej widoczne w przypadku wagi, niż w przypadku wzrostu. Możemy też zauważyć, że badane zmienne mają rozkład normalny (cechy dziedziczone genetycznie często wykazują tę właściwość).
 \begin{figure}[ht]
-    \begin{minipage}[t]{\textwidth}
+    % \begin{minipage}[t]{\textwidth}
         \centering
-        \includegraphics[height=0.45\textheight]{wzrost_gestosc.png}
+        \includegraphics[height=0.4\textheight]{wzrost_gestosc.png}
         \caption{Histogram i gęstość empiryczna wzrostu}
         \label{fig:obrazek1}
-    \end{minipage}
+    % \end{minipage}
     
-    \vspace{1cm} % Dodajemy odstęp między obrazkami
-    
-    \begin{minipage}[t]{\textwidth}
+    % \vspace{1cm} % Dodajemy odstęp między obrazkami
+\end{figure}
+\begin{figure}[!htbp]
+    % \begin{minipage}[t]{\textwidth}
         \centering
-        \includegraphics[height=0.45\textheight]{waga_gestosc.png}
+        \includegraphics[height=0.4\textheight]{waga_gestosc.png}
         \caption{Histogram i gęstość empiryczna wagi}
         \label{fig:obrazek2}
-    \end{minipage}
+    % \end{minipage}
 \end{figure}
-
-
 \subsection{Dystrybuanty}
-Dystrybuanty dla obu zmiennych oraz ich wartości teoretyczne.
-
+Dystrybuanty dla obu zmiennych oraz ich wartości teoretyczne, tzn. z rozkładu normalnego o odpowiednich paametrach.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{dystrybuanta_wzrost.png}
+    \includegraphics[height=0.45\textheight]{dystrybuanta_wzrost.png}
     \caption{Dystrybuanta empiryczna i teoretyczna wzrostu}
     \label{fig:Dystrybuanta wzrostu}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{dystrybuanta_waga.png}
+    \includegraphics[height=0.45\textheight]{dystrybuanta_waga.png}
     \caption{Dystrybuanta empiryczna i teoretyczna wagi}
     \label{fig:Dystrybuanta wagi}
 \end{figure}
@@ -118,14 +116,14 @@ Boxploty dla X i Y, przedstawiające rozkład danych i wartości odstające, z k
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[heigth=0.5\textheight]{boxplot_wzrost.png}
+    \includegraphics[height=0.5\textheight]{boxplot_wzrost.png}
     \caption{Wykres pudełkowy i średnie dla wagi sportowców}
     \label{fig:Średnie wzrostu}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[heigth=0.4\textheigth]{boxplot_waga.png}
+    \includegraphics[height=0.4\textheight]{boxplot_waga.png}
     \caption{Wykres pudełkowy i średnie dla wagi sportowców}
     \label{fig:Średnie wagi}
 \end{figure}
@@ -133,10 +131,18 @@ Boxploty dla X i Y, przedstawiające rozkład danych i wartości odstające, z k
 \subsection{Macierz korelacji}
 Macierz korelacji między X a Y, wizualizacja zależności statystycznych. Wskazuje ona na korelacje między wzrostem i wagą. Wartość bliska 1 świadczy o tym, że istnieje duże powiązanie między wzrostem a wagą wśród sportowców. 
 
-Maryśka wrzuć tu tą macierz gdzieś
+\[
+\begin{bmatrix}
+    1.0 & 0.8018 \\
+    0.8018 & 1.0
+\end{bmatrix}
+\]
+
+Obliczony współczynnik korelacji Spearmana to \textbf{0.83}, co wskazuje na dość silną zależność.
+
 
 \section{Podsumowanie}
-jeszcze nie wiem co
-
+jeszcze nie wiem co \\
+ja też jeszcze nie wiem ale jakiś pomysł kiełkuje
 
 \end{document}
