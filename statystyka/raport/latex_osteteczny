@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\geometry{
+    top=1.8cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+\title{Statystyka \\ \textbf{Analiza wzrostu i wagi sportowców} }
+\author{Prowadzący: Katarzyna Maraj-Zygmąt \\  Autorzy: Maria Nowacka i Bartłomiej Mielcarz}
+\date{8 maja}
+
+\begin{document}
+\maketitle
+
+\section{Cel ćwiczenia}
+Celem tego raportu jest wykorzystanie poznanych narzędzi statystycznych do analizy dwóch zmiennych losowych: wzrostu i wagi sportowców (kobiet), aby zbadać czy istnieje między nimi korelacja, oraz żeby sprawdzić jaki rozkład mają te zmienne.
+
+\section{Źródło danych}
+Dane użyte w tej analizie pochodzą z:
+\\www.kaggle.com/datasets/mysarahmadbhat/120-years-of-olympic-history?resource=download\\ Zostały zebrane w okresie 1920 - 2016 (większość danych z lat 1950 - 2016) i opisują pomiary wzrostu (X) i wagi (Y) dla 10 350 sportowców płci żeńskiej. \\
+Symulacje potrzebne do analizy zostały wykonane w języku python.
+
+\section{Analiza danych}
+\subsection{Statystyki opisowe}
+\subsubsection{Średnia}
+Średnia to sposób na określenie typowej wartości w grupie danych, jak na przykład wzrost czy waga sportowców. Odpowiedni typ średniej pozwala lepiej zrozumieć rozkład i tendencje w grupie.
+% \\Wartości średnich dla wzrostu:\\
+\begin{table}[!htbp]
+\begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        arytmetyczna & 170.53 \\ \hline
+        harmoniczna & 170.01 \\ \hline
+        geometryczna & 170.30  \\ \hline
+        \hline
+        mediana & 170.00 \\ \hline
+    \end{tabular}
+    \caption{średnie wartości - wzrost}
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        arytmetyczna & 63.22 \\ \hline
+        harmoniczna & 61.47 \\ \hline
+        geometryczna & 62.35 \\ \hline
+        \hline
+        mediana & 63.00 \\ \hline
+    \end{tabular}
+    \caption{średnie wartości - wagi}
+\end{minipage}
+\end{table}
+
+Inne średnie, ucinana i winsorowska, powinny zbiegać do mediany. Na wykresach możemy zauważyć, że istotnie tak się dzieje przy ucięciu odpowiedniej ilości danych.
+\begin{figure}[!htbp]
+    % \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.4\textheight]{uw_wzrst.png}
+        \caption{Średnia ucinana i winsorowska dla wzrostu}
+        \label{fig:obrazek1}
+    % \end{minipage}
+\end{figure}
+\begin{figure}[!htbp]
+    % \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.4\textheight]{uw_waga.png}
+        \caption{Średnia ucinana i winsorowska dla wagi}
+        \label{fig:obrazek2}
+    % \end{minipage}
+\end{figure}
+\subsubsection{Mediana}
+Mediana to wartość środkowa, dzieląca zbiór na dwie równe części. Gdy analizujemy na przykład wzrost sportowców, mediana pokazuje wzrost środkowego sportowca. 
+
+\subsubsection{Odchylenie standardowe}
+$$\sigma = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \overline{x})^2}$$
+Odchylenie standardowe informuje nas o rozproszeniu danych wokół średniej. Im większe odchylenie standardowe, tym mniejsza jednorodność. W naszym przypadku odchylenie standardowe wynosi \textbf{8.98} dla wzrostu, a dla wagi \textbf{10.68}. 
+
+Takie odchylenie standardowe dla wzrostu, przy średniej arytmetycznej wynoszącej około 170 można uznać za w miare duże. Z tego wynika, że występuje duże zróżnicowanie wzrostu. Większość sportowców ma wzrost bliski okolicy średniej, ale istnieje spora liczba osób o wzroście znacznie niższym lub wyższym. W przybliżeniu można założyć, że około 68,3\% wszystkich sportowców ma wzrost w przedziale od 161 cm do 179 cm.
+Około 95,5\% sportowców będzie miało wzrost w przedziale od 152 cm do 190 cm.
+
+Obliczając empirycznie, jaki procent kobiet mieści się w podanych przedziałach wzrostu uzyskujemy:
+    68,9\% w przedziale 161-179 cm oraz
+    95\% w przedziale 152-190 cm. widzimy, że wyniki te są zbliżone do oczekiwanych.
+
+Odchylenie standardowe około 11 kg przy średniej 63 kg jest stosunkowo większe niż w przypadku wzrostu. To świadczy o tym, że waga sportowców jest bardziej zróżnicowana niż ich wzrost. Około 68,3\% sportowców waży między 52 kg a 74 kg, a około 95,5\% sportowców waży między 41 kg a 85 kg, co pokazuje szeroki zakres wagowy.
+Obliczając empirycznie jaki procent kobiet mieści się w podanych przedziałach wagowych uzyskujemy:
+    72,6\% w przedziale 52-74 kg oraz
+    95,8\% w przedziale 41-85 kg. Ponownie nasze rezultaty są zbliżone do oczekiwanych wartości dla rozkładu normalnego o odpowiednich parametrach.
+    
+Większe odchylenie standardowe w kontekście wagi może wskazywać na większe zróżnicowanie w grupie sportowców, co może być wynikiem różnic w typach ciał lub specyfikach różnych dyscyplin sportowych. Na przykład, sportowcy uprawiający dyscypliny wymagające większej masy ciała lub siły mogą ważyć znacznie więcej. To, że wartości skrajne są bardziej powszechne w przypadku wagi niż wzrostu sugeruje, że waga jest cechą zmienną i jest bardziej podatna na takie czynniki jak dieta czy trening.
+
+
+\section{Wizualizacje danych}
+\subsection{Histogramy}
+Histogramy dla wzrostu X i wagi Y, pokazujące rozkład danych. Poniższe histogramy i ich gęstości wskazują na fakt, że wartości skrajne są znacznie bardziej widoczne w przypadku wagi, niż w przypadku wzrostu. Możemy też zauważyć, że badane zmienne mają rozkład mocno zblizony do normalnego o parametrach $\mu = 170$ i $\sigma = 8.98$ dla wzrostu oraz $\mu = 63$ i $\sigma = 10.68$ dla wagi. 
+\begin{figure}[ht]
+    % \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.4\textheight]{wzrost_gestosc.png}
+        \caption{Histogram, gęstość empiryczna i teoretyczna wzrostu}
+        \label{fig:obrazek1}
+    % \end{minipage}
+    
+    % \vspace{1cm} % Dodajemy odstęp między obrazkami
+\end{figure}
+\begin{figure}[!htbp]
+    % \begin{minipage}[t]{\textwidth}
+        \centering
+        \includegraphics[height=0.4\textheight]{waga_gestosc.png}
+        \caption{Histogram, gęstość empiryczna i teoretyczna wagi}
+        \label{fig:obrazek2}
+    % \end{minipage}
+\end{figure}
+\subsection{Dystrybuanty}
+Dystrybuanty dla obu zmiennych oraz ich wartości teoretyczne, tzn. z rozkładu normalnego o odpowiednich paametrach.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.45\textheight]{dystrybuanta_wzrost.png}
+    \caption{Dystrybuanta empiryczna i teoretyczna wzrostu}
+    \label{fig:Dystrybuanta wzrostu}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.45\textheight]{dystrybuanta_waga.png}
+    \caption{Dystrybuanta empiryczna i teoretyczna wagi}
+    \label{fig:Dystrybuanta wagi}
+\end{figure}
+
+\section{Porównanie zmiennych X i Y}
+\subsection{Boxploty}
+Boxploty dla X i Y, przedstawiające rozkład danych i wartości odstające, z których również można wywnioskować, że odchylenie standardowe wagi jest większe niż odchylenie standardowe wzrostu.
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{boxplot_wzrost.png}
+    \caption{Wykres pudełkowy - wzrost}
+    \label{fig:Średnie wzrostu}
+\end{minipage}
+\begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{boxplot_waga.png}
+    \caption{Wykres pudełkowy - waga}
+    \label{fig:Średnie wagi}
+\end{minipage}
+    
+\end{figure}
+
+\subsection{Macierz korelacji}
+Aby zbadać korelację między danymi, możemy zacząć od sprawdzenia, jak prezenują się one na wykresie i stwierdzić, czy może istnieć między nimi jakaś zależność. 
+\begin{figure}[t]
+    \centering
+    \includegraphics[height=0.5\textheight]{bb.png}
+    \caption{Wykres zależności zmiennych}
+    \label{fig:enter-label}
+\end{figure}
+Jak widać na wykresie Figure 9, między zmiennymi istnieje pewna korealcja. Dokładną wartość możemy obliczyć używając biblioteki nupmy w języku python. Dla naszych danych macierz korelacji prezentuje się w następujący sposób.
+\[
+\begin{bmatrix}
+    1.0 & 0.73 \\
+    0.73 & 1.0
+\end{bmatrix}
+\]
+Możemy z tego wnioskować, że wzrost i waga są dosyć silnie skorelowane.
+
+Oprócz tego możemy również obliczyć współczynnik korelacji Spearmana, który dla naszych danych wynosi \textbf{0.75}, co również wskazuje na dość silną zależność między zmiennymi.
+
+
+\section{Podsumowanie}
+Po przeanalizowaniu i zwizualizowaniu danych możemy stwierdzić, że nasze zmienne losowe X i Y (wzrost i waga sportowców) są ze sobą dosyć silnie skorelowane oraz obie mają rozkład normalny. Potwierdza to wiedzę z podstaw genetyki - cechy ilościowe (mierzalne) przyjmują wartości będące częścią rozkładu normalnego. Potwierdziliśmy to, generując na wykresach gęstości oraz dystrybuanty teoretyczne oraz empiryczne - linie wykresów nachodzą lub znajdują się bardzo blisko siebie.
+
+Wysoki współczynnik korelacji sugeruje, że waga rośnie wraz ze wzrostem. Jest to dosyć naturalne założenie, ponieważ zazwyczaj osoby wyższe mają wyższą wagę.
+
+Kolejną obserwacją jest większe odchylenie standardowe dla wagi, niż dla wzrostu - może to wynikać z faktu, iż na wagę mamy większy wpływ, a także niektóre sporty wymagają konkretnej wagi u zawodników, przez co zmienna przyjmuje lekko zniekształcone wartości (w porównaniu do teoretycznych wartości z rozkładu normalnego).
+\end{document}
