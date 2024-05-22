@@ -1,0 +1,115 @@
+\documentclass{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{lmodern,microtype}
+\usepackage{mathtools,amsthm,amssymb,icomma,upgreek,xfrac}
+\usepackage{geometry}
+\usepackage{multirow}
+\mathtoolsset{showonlyrefs,mathic}
+\geometry{
+    top=1.8cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\title{Analiza sygnałów \\ \textbf{Analiza obwodów elektrycznych}}
+\author{Prowadzący: dr inż. Ireneusz Augustyniak \\  Autorzy: Maria Nowacka i Bartłomiej Mielcarz}
+\date{26 maja}
+
+\begin{document}
+
+\maketitle
+
+\section{Ładowanie i rozładowywanie kondensatora}
+\subsection{Schemat układu pomiarowego}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{schemat.png}
+    \caption{Schemat układu pomiarowego}
+    \label{fig:enter-label}
+\end{figure}
+\subsection{Model matematyczny}
+\subsubsection{Ładowanie kondensatora}
+
+\large
+Napięcie
+\normalsize
+$$U_0 = U_R + U_C,\quad U_R = I_RR,\quad I_R = I_C$$
+$$Q = C \cdot U_C,\quad I = \frac{\operatorname{d} Q}{\operatorname{d}t}$$
+Z podanych zależności uzyskujemy równanie:
+$$\frac{\operatorname{d}U_C}{\operatorname{d}t} + \frac{1}{RC}U_C = \frac{1}{RC}U_0$$
+którego rozwiązaniem jest:
+$$U_C(t) =  U_0 + De^{-\frac{t}{RC}}.$$
+Podstawiając warunek $U_C(t=0) = \alpha \cdot U_0$ otrzymujemy ostatecznie:
+$$U_C(t) = U_0 - (1 - \alpha)e^{-\frac{t}{RC}}\cdot U_0$$
+
+\large
+Czas ładowania
+\normalsize
+$$U_C(t_c(\alpha, \beta)) = \beta \cdot  U_0 = U_0 - (1 - \alpha)e^{-\frac{t}{RC}}\cdot U_0$$ Po przekształceniach uzyskujemy $$t_c = RC\cdot \ln{\frac{1-\alpha}{1-\beta}}$$
+Zakładamy, że $0 \leq \alpha \leq \beta \leq 1$
+\subsubsection{Rozładowanie kondensatora}
+
+\large
+Napięcie
+\normalsize
+
+$$U_C(0) = \beta\cdot U_0$$
+$$\frac{\operatorname{d}Q}{\operatorname{d}t}\cdot R + \frac{Q}{C} = 0$$
+$$RC\frac{\operatorname{d}U_C}{\operatorname{d}t} + U_C = 0$$
+Uzyskujemy rozwiązanie 
+$U_C = e^{-\frac{t}{RC}}\cdot D$ i wykorzystując warunek początkowy dostajemy
+$$U_C = \beta \cdote^{-\frac{t}{RC}}$$
+
+\large
+Czas rozładowywania
+\normalsize
+$$U_C(t_d(\alpha, \beta)) = \alpha \cdot  U_0 $$
+$$\beta \cdot U_0 e^{-\frac{t}{RC}} = \alpha \cdot U_0$$
+Ostatecznie
+$$t_d (\beta, \alpha) = RC\cdot \ln{\frac{\alpha}{\beta}}$$
+
+\subsection{Symetria ładowania i rozładowywania}
+
+Wiemy, że $t_c = t_d$ (actually Bartek ja nie wiem skąd to wiemy), więc możemy przyrównać
+$RC\cdot \ln{\frac{1-\alpha}{1-\beta}} = RC\cdot \ln{\frac{\alpha}{\beta}}$, co po podzieleniu przez $RC$ i pozbyciu się logarytmów oraz wyłączeniu potrzebnych czynników przed nawias daje nam $(\beta - \alpha)(\beta + \alpha - 1) = 0$, z czego wynika, że $\alpha = \beta$ lub $\alpha + \beta = 1$ i właśnie taką zależność wykorzestujemy przy wyborze $\alpha$ i $\beta$.
+
+\subsection{Oscyloskop}
+Korzystając z programu arduino przeprowadziliśmy pomiary/obliczenia dla różnych pojemności kondensatorów, oporników oraz parametrów $\alpha$ i $\beta$. Wyniki przedstawimy w tabelce.
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+        \multirow{2}{*}{C [$\mu F$]} & \multirow{2}{*}{$R_1 [\Omega]$} & \multirow{2}{*}{$R_2 [\Omega]$} & $\alpha = 0.1$ & $\alpha = 0.25$ & $\alpha = 0.33$ \\
+         &  &  & $\beta = 0.9$ & $\beta = 0.75$ & $\beta = 0.67$ \\ \hline
+        \multirow{2}{*}{470} & 10 000 & 220 & 463,68 & 452,57 & 452,63 \\ \cline{2-6}
+         & \multirow{2}{*}{220} & \multirow{2}{*}{10 000} & 513,07 & 500,58 & 494,33 \\ \cline{1-1} \cline{4-6}
+        \multirow{3}{*}{10} &  &  & 11,88 & 11,88 & 11,87 \\ \cline{2-2} \cline{3-6}
+         & 10 000 & \multirow{2}{*}{220} & 11,16 & 10,72 & 10,59 \\ \cline{2-2} \cline{4-6}
+         & 2000 &  & 11,79 & 11,41 & 11,41 \\ \hline
+    \end{tabular}
+    \caption{Pomiary}
+    \label{tab:my_label}
+\end{table}
+
+\section{Układ szeregowy RLC}
+\subsection{Napięcie}
+Napięcia na rezystorze, cewce i kondensatorze obliczone w programie Xcos znajdują się na poniższym wykresie.
+\begin{figure}[H]
+    \centering
+    \includegraphics{xcosnap.PNG}
+    \caption{Napięcie na rezystorze, cewce i kondensatorze.}
+    \label{fig:enter-label}
+\end{figure}
+\subsection{Równanie}
+Aby obliczyć napięcie musimy rozwiązać równanie różniczkowe II rzędu
+$$A \sin{\omega t} = LC \frac{\operatorname{d}^2 U_C}{\operatorname{d}t^2} + RC \frac{\operatorname{d}U_C}{\operatorname{d}t}$$
+\subsection{Scilab}
+To samo równanie obliczone w programie Scilab daje wynik:
+
+\subsection{Porównanie wyników}
+Przyrównując do siebie uzyskane wyniki, mozemy stwierdzić, że...
+\end{document}
