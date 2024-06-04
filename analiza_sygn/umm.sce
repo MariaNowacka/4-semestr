@@ -37,9 +37,9 @@ plot(real(z), imag(z));
 title('’Zera (o) i bieguny (x)’'); xlabel('’Real’'); ylabel('’Imag [rd/s]’');
 w = 0 : 0.01 : WMAX; //% wybrane pulsacje widma
 [b,a] = zp2tf(z',p',1); //% zera, bieguny -> wspólczynniki wielomianów
-H = freqs(b,a,w); //% wyznaczenie widma transmitancji dla zadanego w
+H = freq(wiel("num"), wiel('den'), w);
 Hm = abs(H); HmdB = 20*log10(Hm); //% moduł transmitancji
-Hf = angle(H); Hfu = unwrap(Hf); //% faza transmitancji
+Hf = atan(imag(H), real(H));
 plot(w,Hm,'k'); title('Ch-ka amplitudowa'); xlabel('w [rd/s]'); 
 plot(w,HmdB,'k'); title('Ch-ka amplitudowa w dB'); xlabel('w [rd/s]'); 
 plot(w,Hf,'k'); title('Ch-ka fazowa'); xlabel('w [rd/s]'); ylabel('[rd]'); 
